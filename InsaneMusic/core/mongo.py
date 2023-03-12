@@ -1,3 +1,8 @@
+# Kanged By © @always_hungry365
+# Owner Mayank
+# All rights reserved. © Alisha © Insane © Yukki
+# Subscribe On YT Jankari Ki Duniya
+
 from motor.motor_asyncio import AsyncIOMotorClient as _mongo_client_
 from pymongo import MongoClient
 from pyrogram import Client
