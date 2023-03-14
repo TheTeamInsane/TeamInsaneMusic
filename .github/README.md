@@ -15,7 +15,7 @@
 ## Features Of Insane And Commands ❤️
 
 <details>
-<summary><b>ғᴇᴀᴛᴜʀᴇs</b></summary>
+<summary><b>Fᴇᴀᴛᴜʀᴇs</b></summary>
 <br>
 
 - Thumbnail Support
@@ -35,9 +35,10 @@
 - Block / Unblock (restrict user for using your bot)
 </details>
 
-#### Overall Basic Commands 😂
+#### 𝙊𝙫𝙚𝙧𝙖𝙡𝙡 𝘽𝙖𝙨𝙞𝙘 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨 🖇️
+
 <details>
-<summary><b>ʙᴀsɪᴄ ᴄᴍᴅs</b></summary>
+<summary><b>Bᴀsɪᴄ ᴄᴍᴅs</b></summary>
 <br>
 
 - `/play <song name>` - play song you requested
@@ -49,10 +50,10 @@
 - `/vk <song name>` - generate song without download
 </details>
 
-### Only Admin Can Exicute 🙄
+### 𝙊𝙣𝙡𝙮 𝘼𝙙𝙢𝙞𝙣 𝘾𝙖𝙣 𝙀𝙭𝙞𝙘𝙪𝙩𝙚 🖇️
 
 <details>
-<summary><b>ᴀᴅᴍɪɴ ᴄᴍᴅs</b></summary>
+<summary><b>Aᴅᴍɪɴ ᴄᴍᴅs</b></summary>
 <br>
 
 - `/player` - open music player settings panel
@@ -65,18 +66,20 @@
 - `/deauth` - deauthorized people to access the admin commands
 </details>
 
-### Sudo Commands 🤭
+### 𝙊𝙣𝙡𝙮 𝙁𝙤𝙧 𝙎𝙪𝙙𝙤𝙪𝙨𝙚𝙧𝙨 ⚕️
+
 <details>
-<summary><b>sᴜᴅᴏ ᴄᴍᴅs ᴏɴʟʏ</b></summary>
+<summary><b>Sᴜᴅᴏ ᴄᴍᴅs ᴏɴʟʏ</b></summary>
 <br>
 
 - `/broadcast` - order the assistant to leave all groups
 - `/gban` - gban user
 </details>
     
-### Only Owner 🙈
+### 𝙊𝙣𝙡𝙮 𝙊𝙬𝙣𝙚𝙧 🍁
+
 <details>
-<summary><b>ᴏɴʟʏ ᴏᴡɴᴇʀ</b></summary>
+<summary><b>Oɴʟʏ ᴏᴡɴᴇʀ</b></summary>
 <br>
 
 - `/broadcast` - send a broadcast message from the bot
@@ -84,7 +87,6 @@
 - `/unblock` - unblock people you blocked for using your bot
 - `/blocklist` - show the list of all people who's blocked for using your bot
 </details>
-
 
 </details>
 
