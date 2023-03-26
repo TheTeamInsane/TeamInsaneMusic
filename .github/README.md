@@ -142,7 +142,7 @@
 </details>
 
 <details>
-<summary><b>ᴅᴇᴘʟᴏʏ ᴛᴏ ʜᴇʀᴏᴋᴜ</b></summary>
+<summary><b>ᴅᴇᴘʟᴏʏ ᴛᴏ VPS</b></summary>
 
 ```
 sudo apt-get update && sudo apt-get upgrade -y
