@@ -141,6 +141,40 @@
 <p><a href="https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2FTheTeamInsane%2FInsaneMusic"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-red?style=for-the-badge&logo=heroku" width="200"/></a></p>
 </details>
 
+<h4>Deploy Vps</h4>
+
+```
+sudo apt-get update && sudo apt-get upgrade -y
+```
+```
+sudo apt-get install python3-pip ffmpeg -y
+```
+```
+sudo pip3 install -U pip
+```
+```
+curl -fssL https://deb.nodesource.com/setup_17.x | sudo -E bash - && sudo apt-get install nodejs -y && npm i -g npm
+```
+```
+sudo apt install git
+```
+```
+git clone https://github.com/TheTeamInsane/TeamInsaneMusic && cd TeamInsaneMusic
+```
+```
+pip3 install -U -r requirements.txt
+```
+```
+cp sample.env .env
+```
+ Edit your Vars here , and Do ctrl `C` and do `:wq`
+```
+tmux
+```
+```
+bash start
+```
+
 # Owner And Credit)
 <details>
 <summary><b>ᴄʀᴇᴅɪᴛ</b></summary>
