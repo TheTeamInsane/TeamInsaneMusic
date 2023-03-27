@@ -168,7 +168,10 @@ pip3 install -U -r requirements.txt
 ```
 cp sample.env .env
 ```
- Edit your Vars here , and Do ctrl `C` and do `:wq`
+```
+vi .env
+```
+ Fill your Vars in .env  and Do ctrl `C` and do `:wq`
 ```
 tmux
 ```
