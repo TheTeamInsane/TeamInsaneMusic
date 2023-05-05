@@ -1,6 +1,3 @@
-
-
-
 import asyncio
 
 from pyrogram import filters
@@ -51,7 +48,7 @@ async def start_comm(client, message: Message, _):
             return await message.reply_text(_["song_2"])
         if name[0:3] == "sta":
             m = await message.reply_text(
-                "🥱 ɢᴇᴛᴛɪɴɢ ʏᴏᴜʀ ᴩᴇʀsᴏɴᴀʟ sᴛᴀᴛs ғʀᴏᴍ {config.MUSIC_BOT_NAME} sᴇʀᴠᴇʀ."
+                "Gᴇᴛᴛɪɴɢ ʏᴏᴜʀ ᴩᴇʀsᴏɴᴀʟ sᴛᴀᴛs ғʀᴏᴍ {config.MUSIC_BOT_NAME} sᴇʀᴠᴇʀ."
             )
             stats = await get_userss(message.from_user.id)
             tot = len(stats)
@@ -87,7 +84,7 @@ async def start_comm(client, message: Message, _):
                     details = stats.get(vidid)
                     title = (details["title"][:35]).title()
                     if vidid == "telegram":
-                        msg += f"🔗[ᴛᴇʟᴇɢʀᴀᴍ ᴍᴇᴅɪᴀ](https://t.me/Dosto_ki_Mehfil786) ** ᴩʟᴀʏᴇᴅ {count} ᴛɪᴍᴇs**\n\n"
+                        msg += f"🔗[Tᴇʟᴇɢʀᴀᴍ ᴍᴇᴅɪᴀ](https://t.me/Insanesupportchat) ** Pʟᴀʏᴇᴅ {count} ᴛɪᴍᴇs**\n\n"
                     else:
                         msg += f"🔗 [{title}](https://www.youtube.com/watch?v={vidid}) ** played {count} times**\n\n"
                 msg = _["ustats_2"].format(tot, tota, limit) + msg
@@ -122,6 +119,18 @@ async def start_comm(client, message: Message, _):
                 return await message.reply_text("ғᴀɪʟᴇᴅ ᴛᴏ ɢᴇᴛ ʟʏʀɪᴄs.")
         if name[0:3] == "del":
             await del_plist_msg(client=client, message=message, _=_)
+        if name == "verify":
+            await message.reply_text(
+                f"🍂 {message.from_user.first_name} Yᴏᴜ Aʀᴇ Sᴜᴄᴄᴇssғᴜʟʟʏ Vᴇʀɪғɪᴇᴅ ɪɴ {config.MUSIC_BOT_NAME}.\n\n❄️ Nᴏᴡ Eɴᴊᴏʏ Pʟᴀʏɪɴɢ Mᴜsɪᴄ !!"
+            )
+            if await is_on_off(config.LOG):
+                sender_id = message.from_user.id
+                sender_name = message.from_user.first_name
+                return await app.send_message(
+                    config.LOG_GROUP_ID,
+                    f"{message.from_user.mention} ᴊᴜsᴛ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ ᴛᴏ <code>ᴠᴇʀɪғʏ ʜɪᴍsᴇʟғ</code>\n\n**ᴜsᴇʀ ɪᴅ:** {sender_id}\n**ᴜsᴇʀɴᴀᴍᴇ:** {sender_name}",
+                )
+            return
         if name[0:3] == "inf":
             m = await message.reply_text("🔎")
             query = (str(name)).replace("info_", "", 1)
@@ -137,18 +146,15 @@ async def start_comm(client, message: Message, _):
                 link = result["link"]
                 published = result["publishedTime"]
             searched_text = f"""
-😲**ᴛʀᴀᴄᴋ ɪɴғᴏʀɴᴀᴛɪᴏɴ**😲
-
-📌**ᴛɪᴛʟᴇ:** {title}
-
-⏳**ᴅᴜʀᴀᴛɪᴏɴ:** {duration} ᴍɪɴᴜᴛᴇs
-👀**ᴠɪᴇᴡs:** `{views}`
-⏰**ᴩᴜʙʟɪsʜᴇᴅ ᴏɴ:** {published}
-🎥**ᴄʜᴀɴɴᴇʟ:** {channel}
-📎**ᴄʜᴀɴɴᴇʟ ʟɪɴᴋ:** [ᴠɪsɪᴛ ᴄʜᴀɴɴᴇʟ]({channellink})
-🔗**ʟɪɴᴋ:** [ᴡᴀᴛᴄʜ ᴏɴ ʏᴏᴜᴛᴜʙᴇ]({link})
-
-💖 sᴇᴀʀᴄʜ ᴩᴏᴡᴇʀᴇᴅ ʙʏ {config.MUSIC_BOT_NAME}"""
+**» °Tʀᴀᴄᴋ Iɴғᴏʀɴᴀᴛɪᴏɴ° «**
+**› Tɪᴛʟᴇ:** {title}
+**› Dᴜʀᴀᴛɪᴏɴ:** {duration}ᴍɪɴ
+**› Vɪᴇᴡs:** `{views}`
+**› Pᴜʙʟɪsʜᴇᴅ ᴏɴ:** {published}
+**› Cʜᴀɴɴᴇʟ:** {channel}
+**› Cʜᴀɴɴᴇʟ ʟɪɴᴋ:** [ᴠɪsɪᴛ ᴄʜᴀɴɴᴇʟ]({channellink})
+**› Lɪɴᴋ:** [Yᴏᴜᴛᴜʙᴇ Lɪɴᴋ]({link})
+Pᴏᴡᴇʀᴇᴅ ʙʏ {config.MUSIC_BOT_NAME}"""
             key = InlineKeyboardMarkup(
                 [
                     [
@@ -183,17 +189,21 @@ async def start_comm(client, message: Message, _):
             try:
                 await message.reply_photo(
                     photo=config.START_IMG_URL,
-                    caption=_["start_2"].format(config.MUSIC_BOT_NAME),
+                    caption=_["start_2"].format(
+                        message.from_user.mention, config.MUSIC_BOT_NAME
+                    ),
                     reply_markup=InlineKeyboardMarkup(out),
                 )
             except:
                 await message.reply_text(
-                    _["start_2"].format(config.MUSIC_BOT_NAME),
+                    _["start_2"].format(
+                        message.from_user.mention, config.MUSIC_BOT_NAME
+                    ),
                     reply_markup=InlineKeyboardMarkup(out),
                 )
         else:
             await message.reply_text(
-                _["start_2"].format(config.MUSIC_BOT_NAME),
+                _["start_2"].format(message.from_user.mention, config.MUSIC_BOT_NAME),
                 reply_markup=InlineKeyboardMarkup(out),
             )
         if await is_on_off(config.LOG):
@@ -214,8 +224,9 @@ async def start_comm(client, message: Message, _):
 @LanguageStart
 async def testbot(client, message: Message, _):
     out = start_pannel(_)
-    return await message.reply_text(
-        _["start_1"].format(message.chat.title, config.MUSIC_BOT_NAME),
+    return await message.reply_photo(
+        photo=config.START_IMG_URL,
+        caption=_["start_1"].format(message.chat.title, config.MUSIC_BOT_NAME),
         reply_markup=InlineKeyboardMarkup(out),
     )
 
@@ -271,15 +282,3 @@ async def welcome(client, message: Message):
             return
         except:
             return
-
-
-@app.on_message(commandpro(["/alive", "Insane"]) & ~filters.edited)
-async def start(client: Client, message: Message):
-    await message.reply_photo(
-        photo=f"https://telegra.ph/file/e5938d9ca8fb7c2724f80.jpg",
-        caption=f"""━━━━━━━━━━━━━━━━━━━━━━━━\n\n✪ ʜᴇʟʟᴏ, Insane ɪs ᴡᴏʀᴋɪɴɢ ᴀɴᴅ ғᴜɴᴄᴛɪᴏɴɪɴɢ ᴘʀᴏᴘᴇʀʟʏ\n✪ ᴛʜᴀɴᴋs ᴛᴏ ʏᴜᴋᴋɪ ᴛᴇᴀᴍ 🌼 ..\n\n┏━━━━━━━━━━━━━━━━━┓\n┣★ ᴏᴡɴᴇʀ    : [Massom](https://t.me/always_hungry365)\n┣★ ᴜᴘᴅᴀᴛᴇs › : [Insane ʜᴇʟᴘ](https://t.me/TheTeamInsane)┓\n┣★ ʀᴇᴘᴏ › : [Insane ʀᴇᴘᴏ](https://github.com/TheTeamInsane/TeamInsaneMusic)\n┗━━━━━━━━━━━━━━━━━┛\n\n💞 ɪғ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴʏ ǫᴜᴇsᴛɪᴏɴs ᴛʜᴇɴ\nᴅᴍ ᴛᴏ ᴍʏ [ᴏᴡɴᴇʀ](https://t.me/always_hungry365) ᴍᴀᴋᴇ sᴜʀᴇ ᴛᴏ sᴛᴀʀ ᴏᴜʀ ᴘʀᴏᴊᴇᴄᴛ ...\n\n━━━━━━━━━━━━━━━━━━━━━━━━
-""",
-        reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🌼 Insane ᴄʜᴀᴛ 💮", url=f"https://t.me/InsaneSupportChat")]]
-        ),
-    )
