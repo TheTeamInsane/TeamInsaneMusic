@@ -1,15 +1,14 @@
-
-
-
 from pyrogram import filters
 from pyrogram.errors import MessageNotModified
 from pyrogram.types import (
     CallbackQuery,
     InlineKeyboardButton,
     InlineKeyboardMarkup,
+    InputMediaPhoto,
+    InputMediaVideo,
     Message,
 )
-
+import config
 from config import BANNED_USERS, CLEANMODE_DELETE_MINS, MUSIC_BOT_NAME, OWNER_ID
 from strings import get_command
 from InsaneMusic import app
@@ -22,6 +21,8 @@ from InsaneMusic.utils.database import (
     get_aud_bit_name,
     get_authuser,
     get_authuser_names,
+    get_served_chats,
+    get_served_users,
     get_playmode,
     get_playtype,
     get_vid_bit_name,
@@ -82,6 +83,17 @@ async def settings_cb(client, CallbackQuery, _):
     )
 
 
+@app.on_callback_query(filters.regex("gib_source") & ~BANNED_USERS)
+@languageCB
+async def gib_repo(client, CallbackQuery, _):
+    await CallbackQuery.edit_message_media(
+        InputMediaVideo("https://te.legra.ph/file/89eacfb3e64ef165d6f6f.mp4"),
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data=f"settingsback_helper")]]
+        ),
+    )
+
+
 @app.on_callback_query(filters.regex("settingsback_helper") & ~BANNED_USERS)
 @languageCB
 async def settings_back_markup(client, CallbackQuery: CallbackQuery, _):
@@ -96,9 +108,22 @@ async def settings_back_markup(client, CallbackQuery: CallbackQuery, _):
         except:
             OWNER = None
         buttons = private_panel(_, app.username, OWNER)
-        return await CallbackQuery.edit_message_text(
-            _["start_2"].format(MUSIC_BOT_NAME),
-            reply_markup=InlineKeyboardMarkup(buttons),
+        image = config.START_IMG_URL
+        served_chats = len(await get_served_chats())
+        served_users = len(await get_served_users())
+        await CallbackQuery.edit_message_media(
+            InputMediaPhoto(
+                media=image,
+                caption=_["start_2"].format(
+                    CallbackQuery.from_user.first_name,
+                    MUSIC_BOT_NAME,
+                    served_users,
+                    served_chats,
+                ),
+            ),
+        )
+        return await CallbackQuery.edit_message_reply_markup(
+            reply_markup=InlineKeyboardMarkup(buttons)
         )
     else:
         buttons = setting_markup(_)
