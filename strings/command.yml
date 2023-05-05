@@ -1,10 +1,10 @@
 # Bot Commands
-PING_COMMAND : ["ping"]
-START_COMMAND : ["start"]
+PING_COMMAND : ["ping", "alive"]
+START_COMMAND : ["start", "mstart"]
 HELP_COMMAND : ["help"]
 SETTINGS_COMMAND : ["settings", "setting"]
 RELOAD_COMMAND : ["admincache", "reload"]
-GSTATS_COMMAND : ["gstats"]
+GSTATS_COMMAND : ["gstats", "globalstats"]
 STATS_COMMAND : ["stats"]
 LANGUAGE_COMMAND : ["lang", "language", "langs"]
 
