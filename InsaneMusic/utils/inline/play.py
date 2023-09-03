@@ -55,7 +55,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
         ],
         [
             InlineKeyboardButton(
-                text="• Cʟᴏsᴇ •", callback_data=f"ADMIN CloseA|{chat_id}"
+                text="• Cʟᴏsᴇ [🇮🇳]•", callback_data=f"ADMIN CloseA|{chat_id}"
             )
         ],
     ]
@@ -130,7 +130,7 @@ def stream_markup(_, videoid, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="• Cʟᴏsᴇ •", callback_data=f"ADMIN CloseA|{chat_id}"
+                text="• Cʟᴏsᴇ [🇮🇳]•", callback_data=f"ADMIN CloseA|{chat_id}"
             )
         ],
     ]
@@ -150,7 +150,7 @@ def telegram_markup(_, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="• Cʟᴏsᴇ •", callback_data=f"ADMIN CloseA|{chat_id}"
+                text="• Cʟᴏsᴇ [🇮🇳]•", callback_data=f"ADMIN CloseA|{chat_id}"
             )
         ],
     ]
@@ -316,7 +316,7 @@ def panel_markup_1(_, videoid, chat_id):
 ## Extra Shit
 
 close_keyboard = InlineKeyboardMarkup(
-    [[InlineKeyboardButton(text="• Cʟᴏsᴇ •", callback_data="close")]]
+    [[InlineKeyboardButton(text="• Cʟᴏsᴇ [🇮🇳]•", callback_data="close")]]
 )
 
 
@@ -327,7 +327,7 @@ def queue_markup(_, videoid, chat_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text="• Cʟᴏsᴇ •", callback_data=f"ADMIN CloseA|{chat_id}"
+                text="• Cʟᴏsᴇ [🇮🇳]•", callback_data=f"ADMIN CloseA|{chat_id}"
             )
         ],
     ]
